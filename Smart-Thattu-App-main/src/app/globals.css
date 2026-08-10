@@ -1,0 +1,237 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #ffffff;
+  --foreground: #0a0a0f;
+  --muted: #f5f5f7;
+  --muted-foreground: #6e6e73;
+  --border: #d2d2d7;
+  --accent: #ff6b35;
+  --accent-foreground: #ffffff;
+  --card: #ffffff;
+  --card-foreground: #0a0a0f;
+  --primary: #0a0a0f;
+  --primary-foreground: #ffffff;
+  --secondary: #f5f5f7;
+  --ring: #0071e3;
+  --success: #34c759;
+  --warning: #ff9500;
+  --danger: #ff3b30;
+}
+
+.dark {
+  --background: #000000;
+  --foreground: #f5f5f7;
+  --muted: #1c1c1e;
+  --muted-foreground: #8e8e93;
+  --border: #2c2c2e;
+  --accent: #ff7a45;
+  --card: #1c1c1e;
+  --card-foreground: #f5f5f7;
+  --primary: #f5f5f7;
+  --primary-foreground: #000000;
+  --secondary: #2c2c2e;
+  --ring: #0a84ff;
+}
+
+html,
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+    "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.01em;
+}
+
+* {
+  border-color: var(--border);
+}
+
+/* Apple-like smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
+
+/* Glass effect for Apple-style UI */
+.apple-glass {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
+.dark .apple-glass {
+  background: rgba(28, 28, 30, 0.72);
+}
+
+/* Focus ring */
+input:focus,
+textarea:focus,
+select:focus,
+button:focus-visible {
+  outline: none;
+}
+.focus-ring:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.25);
+  outline: 2px solid var(--ring);
+  outline-offset: 1px;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #ff6b35 0%, #c0392b 50%, #ff9500 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Animations */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--muted) 25%,
+    var(--border) 50%,
+    var(--muted) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite;
+}
+
+/* Hide scrollbar for horizontal lists */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Button base */
+.btn-primary {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  padding: 0.65rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+.btn-accent {
+  background: linear-gradient(135deg, #ff6b35, #ff9500);
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+  box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+}
+.btn-accent:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(255, 107, 53, 0.4);
+}
+.btn-ghost {
+  background: var(--muted);
+  color: var(--foreground);
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+.btn-ghost:hover {
+  background: var(--border);
+}
+
+.card {
+  background: var(--card);
+  color: var(--card-foreground);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 1.5rem;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  background: var(--muted);
+  border: 1px solid transparent;
+  border-radius: 12px;
+  color: var(--foreground);
+  font-size: 0.95rem;
+  transition: all 0.15s;
+}
+.input-field::placeholder {
+  color: var(--muted-foreground);
+}
+.input-field:focus {
+  background: var(--background);
+  border-color: var(--ring);
+  box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.15);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: var(--muted);
+  color: var(--foreground);
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid var(--border);
+}
+.chip-accent {
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.12), rgba(255, 149, 0, 0.12));
+  color: var(--accent);
+  border-color: rgba(255, 107, 53, 0.3);
+}
+
+/* Smooth page transitions */
+.page-enter {
+  animation: fadeInUp 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tabular numbers for charts */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}

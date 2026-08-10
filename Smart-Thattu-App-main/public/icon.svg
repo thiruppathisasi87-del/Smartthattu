@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff6b35"/>
+      <stop offset="100%" stop-color="#c0392b"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <!-- Thattu / plate -->
+  <circle cx="256" cy="280" r="150" fill="#fff" opacity="0.95"/>
+  <circle cx="256" cy="280" r="130" fill="#fdf6ec"/>
+  <!-- Rice mound -->
+  <ellipse cx="256" cy="290" rx="60" ry="22" fill="#fff"/>
+  <ellipse cx="256" cy="278" rx="55" ry="20" fill="#ffffff"/>
+  <!-- Dal bowl top right -->
+  <circle cx="360" cy="230" r="38" fill="#f59e0b"/>
+  <ellipse cx="360" cy="220" rx="34" ry="10" fill="#fbbf24"/>
+  <!-- Sabzi top left -->
+  <circle cx="158" cy="235" r="38" fill="#16a34a"/>
+  <circle cx="148" cy="228" r="6" fill="#166534"/>
+  <circle cx="168" cy="242" r="6" fill="#166534"/>
+  <!-- Curry right -->
+  <circle cx="350" cy="340" r="32" fill="#b45309"/>
+  <!-- Chapati left -->
+  <circle cx="165" cy="340" r="34" fill="#deb887" stroke="#a0743e" stroke-width="2"/>
+  <!-- Steam -->
+  <path d="M200 165 q10 -25 0 -50" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.8"/>
+  <path d="M256 155 q10 -30 0 -60" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.9"/>
+  <path d="M312 165 q10 -25 0 -50" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.8"/>
+  <!-- Leaf (curry patta) -->
+  <path d="M240 120 q25 -30 50 -15 q-5 25 -30 30 q-15 0 -20 -15 z" fill="#16a34a"/>
+</svg>
